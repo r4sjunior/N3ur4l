@@ -71,6 +71,7 @@ class Particle {
 
   connect(others) {
     for (let other of others) {
+      if (other === this) continue;
       let d = dist(this.pos.x, this.pos.y, other.pos.x, other.pos.y);
       if (d < 100) {
         let blendColor = lerpColor(this.col, other.col, 0.5);
